@@ -30,4 +30,28 @@
       <div>{{amount | currency}}</div>
     </div>
   </div>
+  <div class="row">
+    <div class="form-group col">
+      <label>Height</label>
+      <input class="form-control" (input)="onHeightChange($event)" />
+    </div>
+    <div class="col">
+      <label><b>Height</b></label>
+      <div>{{height | number: '1.0-0'}}</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col">
+      <label>Miles</label>
+      <input class="form-control" (input)="onMilesChange($event)" />
+    </div>
+    <div class="col">
+      <label><b>Kilometers</b></label>
+      <div *ngIf="(miles | convert: 'cm') >= 10">{{miles | convert: 'cm' | number: "1.0-2"}}</div>
+    </div>
+  </div>
+  <div class="row">
+    {{car | json}}
+  </div>
 </div>
+

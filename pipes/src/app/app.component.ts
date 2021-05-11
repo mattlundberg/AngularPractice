@@ -9,6 +9,13 @@ export class AppComponent {
   payeeName: string;
   paymentDate: string;
   amount: number;
+  height: number;
+  miles: number;
+  car = {
+    make: "Toyota",
+    model: "Camry",
+    year: "2000"
+  };
   
   onNameChange(event:Event){
     const target = event.target as HTMLInputElement;
@@ -23,5 +30,15 @@ export class AppComponent {
   onAmountChange(event:Event){
     const target = event.target as HTMLInputElement;
     this.amount = parseFloat(target.value);
+  }
+
+  onHeightChange(event:Event){
+    const target = event.target as HTMLInputElement;
+    this.height = parseFloat(target.value);
+  }
+
+  onMilesChange(event:Event){
+    const target = event.target as HTMLInputElement;
+    this.miles = parseFloat(target.value);
   }
 }
